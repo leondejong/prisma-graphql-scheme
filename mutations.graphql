@@ -1,0 +1,96 @@
+# List
+
+mutation CreateList($name: String!) {
+  createList(
+    data: {
+      name: $name
+    }
+  ) {
+    id
+    name
+  }
+}
+
+mutation UpdateList($id: ID!, $name: String!) {
+  updateList(
+    where: {
+      id: $id
+    }
+    data: {
+      name: $name
+    }
+  ) {
+    id
+    name
+  }
+}
+
+mutation DeleteList($id: ID!) {
+  deleteList(
+    where: {
+      id: $id
+    }
+  ) {
+    id
+  }
+}
+
+# Item
+
+mutation CreateItem($listId: ID!, $name: String!, $checked: Boolean!) {
+  createItem(
+    data: {
+      name: $name
+      checked: $checked
+      list: {
+        connect: {
+          id: $listId
+        }
+      }
+    }
+  ) {
+    id
+    name
+    checked
+  }
+}
+
+mutation UpdateItem($id: ID!, $listId: ID, $name: String, $checked: Boolean) {
+  updateItem(
+    where: {
+      id: $id
+    }
+    data: {
+      name: $name
+      checked: $checked
+      list: {
+        connect: {
+          id: $listId
+        }
+      }
+    }
+  ) {
+    id
+    name
+    checked
+  }
+}
+
+mutation DeleteItem($id: ID!) {
+  deleteItem(
+    where: {
+      id: $id
+    }
+  ) {
+    id
+  }
+}
+
+# Variables
+
+# {
+#   "id": "cjddl4p87001r0122go710s81",
+#   "listId": "cjddlm3ux002k01220pcps3tc",
+#   "name": "Name",
+#   "checked": false
+# }

@@ -1,0 +1,65 @@
+# List
+
+query Lists {
+  lists {
+    id
+    name
+    items {
+      id
+      name
+      checked
+    }
+  }
+}
+
+query List($id: ID!) {
+  list(
+    where: {
+      id: $id
+    }
+  ) {
+    id
+    name
+    items {
+      id
+      name
+      checked
+    }
+  }
+}
+
+# Item
+
+query Items {
+  items {
+    id
+    name
+    checked
+    list {
+      name
+    }
+  }
+}
+
+query Item($id: ID!) {
+  item(
+    where: {
+      id: $id
+    }
+  ) {
+    id
+    name
+    checked
+    list {
+      name
+    }
+  }
+}
+
+# Variables
+
+# {
+#   "id": "cjddl4p87001r0122go710s81",
+#   "name": "Name",
+#   "checked": false
+# }

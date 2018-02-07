@@ -1,0 +1,16 @@
+type Item {
+  id: ID! @unique
+  name: String!
+  checked: Boolean!
+  list: List
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type List {
+  id: ID! @unique
+  name: String!
+  items: [Item!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}

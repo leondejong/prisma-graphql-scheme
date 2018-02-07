@@ -1,0 +1,8 @@
+service: prisma-graphql-scheme
+stage: dev
+
+datamodel: types.graphql
+
+# secret: secret
+disableAuth: true
+cluster: local
