@@ -1,9 +1,9 @@
 # Prisma GraphQL Scheme
 
-Make sure you have Docker installed and running.  
+Install Prisma: `npm install -g prisma` or `yarn global add prisma`
 
-Install Prisma: `npm install -g prisma` or `yarn global add prisma`  
+Run docker: `docker-compose up`
 
-Deploy service: `prisma deploy`  
+Deploy service: `prisma deploy`
 
-Go to the GraphQL database endpoint provided to access the Playground.  
+Go to the GraphQL database endpoint provided to access the Playground.
